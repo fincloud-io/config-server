@@ -57,6 +57,9 @@
 				<configuration>
 					<mainClass>${start-class}</mainClass>
 					<layout>ZIP</layout>
+					<image>
+						<builder>dashaun/builder-multiarch</builder>
+					</image>
 				</configuration>
 				<executions>
 					<execution>

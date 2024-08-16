@@ -1,0 +1,15 @@
+networks:
+  fincloud:
+    driver: bridge
+
+services:
+  cfg:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: config-server
+    restart: unless-stopped
+    ports:
+      - "8071:8071"
+    networks:
+      - fincloud
