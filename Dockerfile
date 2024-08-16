@@ -19,6 +19,6 @@ RUN mkdir -p /config-server
 COPY --from=maven_tool_chain '/tmp/fincloud/target/config-server.jar' /app/
 
 ENTRYPOINT ["/usr/local/bin/dumb-init", "--"]
-CMD ["java","-Dspring.profiles.active=native", "-Dlog4j2.formatMsgNoLookups=true","-Djava.security.egd=file:/dev/./urandom","-jar", "/app/config-server.jar"]
+CMD ["java","-Dlog4j2.formatMsgNoLookups=true","-Djava.security.egd=file:/dev/./urandom","-jar", "/app/config-server.jar"]
 
 # HEALTHCHECK --interval=1m --timeout=3s CMD wget --quiet --tries=1 --spider http://localhost:8080/actuator/health || exit 1
